@@ -1,0 +1,10 @@
+E:\GitHub\QLSinhVien\QLSinhVien\bin\Debug\QLSinhVien.exe.config
+E:\GitHub\QLSinhVien\QLSinhVien\bin\Debug\QLSinhVien.exe
+E:\GitHub\QLSinhVien\QLSinhVien\bin\Debug\QLSinhVien.pdb
+E:\GitHub\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.csproj.AssemblyReference.cache
+E:\GitHub\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.Form1.resources
+E:\GitHub\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.Properties.Resources.resources
+E:\GitHub\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.csproj.GenerateResource.cache
+E:\GitHub\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.csproj.CoreCompileInputs.cache
+E:\GitHub\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.exe
+E:\GitHub\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.pdb
