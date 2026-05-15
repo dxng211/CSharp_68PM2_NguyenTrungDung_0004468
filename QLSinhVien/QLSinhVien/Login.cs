@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLSinhVien
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -41,7 +41,10 @@ namespace QLSinhVien
 
             if (username == Email && password == MSSV) {
                 MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                Quan_ly_sinh_vien f = new Quan_ly_sinh_vien();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
             }
             else
             {

@@ -8,3 +8,15 @@ E:\GitHub\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.csproj.GenerateResource.cac
 E:\GitHub\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.csproj.CoreCompileInputs.cache
 E:\GitHub\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.exe
 E:\GitHub\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.pdb
+E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\bin\Debug\QLSinhVien.exe.config
+E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\bin\Debug\QLSinhVien.exe
+E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\bin\Debug\QLSinhVien.pdb
+E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.csproj.AssemblyReference.cache
+E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.exe.config
+E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.Properties.Resources.resources
+E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.csproj.GenerateResource.cache
+E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.csproj.CoreCompileInputs.cache
+E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.exe
+E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.pdb
+E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.Login.resources
+E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.Quan_ly_sinh_vien.resources
