@@ -20,3 +20,5 @@ E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\Q
 E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.pdb
 E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.Login.resources
 E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.Quan_ly_sinh_vien.resources
+E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.UC_QuanLyLopHoc.resources
+E:\GitHub\CSharp_68PM2_NguyenTrungDung_0004468\QLSinhVien\QLSinhVien\obj\Debug\QLSinhVien.UC_QuanLySinhVien.resources

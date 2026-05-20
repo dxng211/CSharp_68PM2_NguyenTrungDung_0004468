@@ -60,6 +60,18 @@
     <Compile Include="QLSinhVien.Designer.cs">
       <DependentUpon>QLSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_QuanLyLopHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanLyLopHoc.Designer.cs">
+      <DependentUpon>UC_QuanLyLopHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanLySinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanLySinhVien.Designer.cs">
+      <DependentUpon>UC_QuanLySinhVien.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +86,12 @@
     </Compile>
     <EmbeddedResource Include="QLSinhVien.resx">
       <DependentUpon>QLSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanLyLopHoc.resx">
+      <DependentUpon>UC_QuanLyLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanLySinhVien.resx">
+      <DependentUpon>UC_QuanLySinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
