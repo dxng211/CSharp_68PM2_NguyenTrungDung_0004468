@@ -35,11 +35,6 @@
             this.btn_backward = new System.Windows.Forms.Button();
             this.btn_backwardx2 = new System.Windows.Forms.Button();
             this.grid_QLSV = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Tim = new System.Windows.Forms.Button();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -84,6 +79,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 625);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label7
             // 
@@ -138,12 +134,6 @@
             // 
             this.grid_QLSV.BackgroundColor = System.Drawing.Color.White;
             this.grid_QLSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_QLSV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
             this.grid_QLSV.GridColor = System.Drawing.Color.White;
             this.grid_QLSV.Location = new System.Drawing.Point(412, 136);
             this.grid_QLSV.Name = "grid_QLSV";
@@ -151,41 +141,7 @@
             this.grid_QLSV.RowTemplate.Height = 24;
             this.grid_QLSV.Size = new System.Drawing.Size(737, 416);
             this.grid_QLSV.TabIndex = 12;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã SV";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Họ và Tên";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Giới Tính";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Ngày Sinh";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Lớp";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
+            this.grid_QLSV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_QLSV_CellContentClick);
             // 
             // btn_Tim
             // 
@@ -258,6 +214,7 @@
             this.btn_Them.TabIndex = 1;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = false;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // groupBox1
             // 
@@ -282,9 +239,6 @@
             // cmb_Lop
             // 
             this.cmb_Lop.FormattingEnabled = true;
-            this.cmb_Lop.Items.AddRange(new object[] {
-            "68PM1 - Lớp 68PM1",
-            "68PM2 - Lớp 68PM2"});
             this.cmb_Lop.Location = new System.Drawing.Point(20, 352);
             this.cmb_Lop.Name = "cmb_Lop";
             this.cmb_Lop.Size = new System.Drawing.Size(302, 24);
@@ -379,6 +333,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "UC_QuanLySinhVien";
             this.Size = new System.Drawing.Size(1182, 625);
+            this.Load += new System.EventHandler(this.UC_QuanLySinhVien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_QLSV)).EndInit();
@@ -397,11 +352,6 @@
         private System.Windows.Forms.Button btn_backward;
         private System.Windows.Forms.Button btn_backwardx2;
         private System.Windows.Forms.DataGridView grid_QLSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button btn_Tim;
         private System.Windows.Forms.TextBox txt_TimKiem;
         private System.Windows.Forms.Label label6;
