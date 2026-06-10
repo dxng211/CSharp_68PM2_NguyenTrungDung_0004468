@@ -13,6 +13,8 @@ namespace QLSinhVien
     public partial class UC_QuanLyLopHoc : UserControl
     {
         databaseDataContext db = new databaseDataContext();
+        int trangHienTai = 1;
+        int soDongTrenTrang = 5;
         public UC_QuanLyLopHoc()
         {
             InitializeComponent();
@@ -20,12 +22,23 @@ namespace QLSinhVien
 
         private void UC_QuanLyLopHoc_Load(object sender, EventArgs e)
         {
-            LoadData();
+            LoadDataPhanTrang();
         }
-        public void LoadData()
+        public void LoadDataPhanTrang()
         {
-            List<tbl_lophoc> dSLH = db.tbl_lophocs.ToList();
+            int tongSoBanGhi = db.tbl_lophocs.Count();
+
+            int tongSoTrang = (int)Math.Ceiling((double)tongSoBanGhi / soDongTrenTrang);
+            if (tongSoTrang == 0) tongSoTrang = 1;
+
+            var dSLH = db.tbl_lophocs
+                         .Skip((trangHienTai - 1) * soDongTrenTrang)
+                         .Take(soDongTrenTrang)
+                         .ToList();
+
             gridviewQLLH.DataSource = dSLH;
+
+            txt_Pagination.Text = $"Trang {trangHienTai}/{tongSoTrang} | {tongSoBanGhi} bản ghi";
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -40,11 +53,136 @@ namespace QLSinhVien
                 db.tbl_lophocs.InsertOnSubmit(lophoc);
                 db.SubmitChanges();
                 MessageBox.Show("Thêm mới thành công");
-                LoadData();
+                LoadDataPhanTrang();
             }
             catch (Exception ex) { 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTimKiem.Text;
+
+            List<tbl_lophoc> ketQua = db.tbl_lophocs.Where(x => x.id.Contains(tuKhoa)
+                                                                || x.malop == tuKhoa
+                                                                || x.tenlop == tuKhoa).ToList();
+
+            gridviewQLLH.DataSource = ketQua;
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            tbl_lophoc lophoc = db.tbl_lophocs.SingleOrDefault(x => x.id == txtMaID.Text);
+
+            lophoc.malop = txtMaLop.Text;
+            lophoc.tenlop = txtTenLop.Text;
+            lophoc.ghichu = txtGhiChu.Text;
+            try
+            {
+                db.SubmitChanges();
+
+                MessageBox.Show("Sửa thành công");
+                LoadDataPhanTrang();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            tbl_lophoc lophoc = db.tbl_lophocs.SingleOrDefault(x => x.id == txtMaID.Text);
+            try
+            {
+                db.tbl_lophocs.DeleteOnSubmit(lophoc);
+
+                db.SubmitChanges();
+                MessageBox.Show("Xóa thành công");
+                LoadDataPhanTrang();
+
+                btnLamMoi_Click(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            txtMaLop.Clear();
+            txtMaID.Clear();
+            txtMaID.ReadOnly = false;
+            txtTenLop.Clear();
+            txtGhiChu.Clear();
+            LoadDataPhanTrang();
+        }
+
+        private void gridviewQLLH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = gridviewQLLH.CurrentRow;
+
+            txtMaID.Text = row.Cells["id"].Value.ToString();
+            txtMaID.ReadOnly = true;
+            txtMaLop.Text = row.Cells["malop"].Value.ToString();
+            txtTenLop.Text = row.Cells["tenlop"].Value.ToString();
+            txtGhiChu.Text = row.Cells["ghichu"].Value.ToString();
+        }
+
+        private void btn_backward_Click(object sender, EventArgs e)
+        {
+            if (trangHienTai > 1)
+            {
+                trangHienTai--;
+                LoadDataPhanTrang();
+            }
+        }
+
+        private void btn_backwardx2_Click(object sender, EventArgs e)
+        {
+            trangHienTai = 1;
+            LoadDataPhanTrang();
+        }
+
+        private void btn_forward_Click(object sender, EventArgs e)
+        {
+            int tongSoBanGhi = db.tbl_lophocs.Count();
+            int tongSoTrang = (int)Math.Ceiling((double)tongSoBanGhi / soDongTrenTrang);
+
+            if (trangHienTai < tongSoTrang)
+            {
+                trangHienTai++;
+                LoadDataPhanTrang();
+            }
+        }
+
+        private void btn_forwardx2_Click(object sender, EventArgs e)
+        {
+            int tongSoBanGhi = db.tbl_lophocs.Count();
+            int tongSoTrang = (int)Math.Ceiling((double)tongSoBanGhi / soDongTrenTrang);
+            if (tongSoTrang == 0) tongSoTrang = 1;
+
+            trangHienTai = tongSoTrang;
+            LoadDataPhanTrang();
+        }
+
+        private void btnXemDS_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMaLop.Text))
+            {
+                MessageBox.Show("Chọn 1 lớp từ danh sách");
+                return;
+            }
+
+            string maLopDuocChon = txtMaLop.Text;
+
+            var dSSVTheoLop = db.tbl_sinhviens.Where(x => x.malop == maLopDuocChon).ToList();
+
+            gridviewQLLH.DataSource = dSSVTheoLop;
+
+            txt_Pagination.Text = $"{maLopDuocChon} | {dSSVTheoLop.Count} sinh viên";
         }
     }
 }

@@ -126,6 +126,7 @@ namespace QLSinhVien
             date_NgaySinh.Value = DateTime.Now;
             if (cmbGioiTinh.Items.Count > 0) cmbGioiTinh.SelectedIndex = 0;
             if (cmb_Lop.Items.Count > 0) cmb_Lop.SelectedIndex = 0;
+            LoadDataPhanTrang() ;
 
         }
 
