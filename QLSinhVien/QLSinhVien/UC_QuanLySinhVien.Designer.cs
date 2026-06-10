@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txt_Pagination = new System.Windows.Forms.Label();
             this.btn_forwardx2 = new System.Windows.Forms.Button();
             this.btn_forward = new System.Windows.Forms.Button();
             this.btn_backward = new System.Windows.Forms.Button();
@@ -60,7 +60,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.txt_Pagination);
             this.panel1.Controls.Add(this.btn_forwardx2);
             this.panel1.Controls.Add(this.btn_forward);
             this.panel1.Controls.Add(this.btn_backward);
@@ -81,14 +81,15 @@
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label7
+            // txt_Pagination
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(603, 575);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 16);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Trang 1/1 | 0 bản ghi";
+            this.txt_Pagination.AutoSize = true;
+            this.txt_Pagination.Location = new System.Drawing.Point(603, 575);
+            this.txt_Pagination.Name = "txt_Pagination";
+            this.txt_Pagination.Size = new System.Drawing.Size(127, 16);
+            this.txt_Pagination.TabIndex = 17;
+            this.txt_Pagination.Text = "Trang 1/1 | 2 bản ghi";
+            this.txt_Pagination.Click += new System.EventHandler(this.txt_Pagination_Click);
             // 
             // btn_forwardx2
             // 
@@ -99,6 +100,7 @@
             this.btn_forwardx2.TabIndex = 16;
             this.btn_forwardx2.Text = ">>";
             this.btn_forwardx2.UseVisualStyleBackColor = false;
+            this.btn_forwardx2.Click += new System.EventHandler(this.btn_forwardx2_Click);
             // 
             // btn_forward
             // 
@@ -109,6 +111,7 @@
             this.btn_forward.TabIndex = 15;
             this.btn_forward.Text = ">";
             this.btn_forward.UseVisualStyleBackColor = false;
+            this.btn_forward.Click += new System.EventHandler(this.btn_forward_Click);
             // 
             // btn_backward
             // 
@@ -119,6 +122,7 @@
             this.btn_backward.TabIndex = 14;
             this.btn_backward.Text = "<";
             this.btn_backward.UseVisualStyleBackColor = false;
+            this.btn_backward.Click += new System.EventHandler(this.btn_backward_Click);
             // 
             // btn_backwardx2
             // 
@@ -129,6 +133,7 @@
             this.btn_backwardx2.TabIndex = 13;
             this.btn_backwardx2.Text = "<<";
             this.btn_backwardx2.UseVisualStyleBackColor = false;
+            this.btn_backwardx2.Click += new System.EventHandler(this.btn_backwardx2_Click);
             // 
             // grid_QLSV
             // 
@@ -153,6 +158,7 @@
             this.btn_Tim.TabIndex = 11;
             this.btn_Tim.Text = "Tìm";
             this.btn_Tim.UseVisualStyleBackColor = false;
+            this.btn_Tim.Click += new System.EventHandler(this.btn_Tim_Click);
             // 
             // txt_TimKiem
             // 
@@ -181,6 +187,7 @@
             this.btn_LamMoi.TabIndex = 4;
             this.btn_LamMoi.Text = "Làm mới";
             this.btn_LamMoi.UseVisualStyleBackColor = false;
+            this.btn_LamMoi.Click += new System.EventHandler(this.btn_LamMoi_Click);
             // 
             // btn_Xoa
             // 
@@ -192,6 +199,7 @@
             this.btn_Xoa.TabIndex = 3;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // btn_Sua
             // 
@@ -203,6 +211,7 @@
             this.btn_Sua.TabIndex = 2;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // btn_Them
             // 
@@ -346,7 +355,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label txt_Pagination;
         private System.Windows.Forms.Button btn_forwardx2;
         private System.Windows.Forms.Button btn_forward;
         private System.Windows.Forms.Button btn_backward;

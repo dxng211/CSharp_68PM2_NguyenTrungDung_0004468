@@ -36,10 +36,6 @@
             this.btn_backward = new System.Windows.Forms.Button();
             this.btn_backwardx2 = new System.Windows.Forms.Button();
             this.gridviewQLLH = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTim = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -148,11 +144,6 @@
             // 
             this.gridviewQLLH.BackgroundColor = System.Drawing.Color.White;
             this.gridviewQLLH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridviewQLLH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
             this.gridviewQLLH.GridColor = System.Drawing.Color.White;
             this.gridviewQLLH.Location = new System.Drawing.Point(412, 136);
             this.gridviewQLLH.Name = "gridviewQLLH";
@@ -160,34 +151,6 @@
             this.gridviewQLLH.RowTemplate.Height = 24;
             this.gridviewQLLH.Size = new System.Drawing.Size(737, 416);
             this.gridviewQLLH.TabIndex = 12;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã ID";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Mã lớp";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Tên lớp";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Ghi chú";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
             // 
             // btnTim
             // 
@@ -260,6 +223,7 @@
             this.btnThem.TabIndex = 1;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupBox1
             // 
@@ -354,6 +318,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "UC_QuanLyLopHoc";
             this.Size = new System.Drawing.Size(1182, 625);
+            this.Load += new System.EventHandler(this.UC_QuanLyLopHoc_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewQLLH)).EndInit();
@@ -389,9 +354,5 @@
         private System.Windows.Forms.Button btnXemDS;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.TextBox txtTenLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
