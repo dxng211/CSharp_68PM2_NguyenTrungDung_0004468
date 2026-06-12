@@ -38,7 +38,7 @@ namespace QLSinhVien
 
             gridviewQLLH.DataSource = dSLH;
 
-            txt_Pagination.Text = $"Trang {trangHienTai}/{tongSoTrang} | {tongSoBanGhi} bản ghi";
+            txt_Pagination.Text = $"Trang {trangHienTai}/{tongSoTrang} | {soDongTrenTrang} bản ghi";
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -64,15 +64,32 @@ namespace QLSinhVien
         {
             string tuKhoa = txtTimKiem.Text;
 
+            if (string.IsNullOrEmpty(tuKhoa))
+            {
+                LoadDataPhanTrang();
+                return;
+            }
+
             List<tbl_lophoc> ketQua = db.tbl_lophocs.Where(x => x.id.Contains(tuKhoa)
                                                                 || x.malop == tuKhoa
-                                                                || x.tenlop == tuKhoa).ToList();
+                                                                || x.tenlop == tuKhoa).OrderBy(x => x.id).ToList();
 
-            gridviewQLLH.DataSource = ketQua;
+            if (ketQua.Count == 0)
+            {
+                MessageBox.Show("Không tim thấy lớp học", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                gridviewQLLH.DataSource = null;
+            }
+            else gridviewQLLH.DataSource = ketQua;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtMaID.Text))
+            {
+                MessageBox.Show("Vui lòng chọn lớp học cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             tbl_lophoc lophoc = db.tbl_lophocs.SingleOrDefault(x => x.id == txtMaID.Text);
 
             lophoc.malop = txtMaLop.Text;
@@ -93,7 +110,27 @@ namespace QLSinhVien
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtMaID.Text))
+            {
+                MessageBox.Show("Vui lòng chọn lớp học cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string maLop = txtMaLop.Text;
+
+            bool coSinhVien = db.tbl_sinhviens.Any(sv => sv.malop == maLop);
+            if (coSinhVien)
+            {
+                MessageBox.Show("Không thể xóa lớp này vì đang có sinh viên thuộc lớp", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
+
             tbl_lophoc lophoc = db.tbl_lophocs.SingleOrDefault(x => x.id == txtMaID.Text);
+
+            DialogResult r = MessageBox.Show($"Bạn chắc chắn muốn XÓA lớp {lophoc.malop} không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.No) return;
+
             try
             {
                 db.tbl_lophocs.DeleteOnSubmit(lophoc);
@@ -122,7 +159,8 @@ namespace QLSinhVien
 
         private void gridviewQLLH_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = gridviewQLLH.CurrentRow;
+            if (e.RowIndex < 0) return;
+            DataGridViewRow row = gridviewQLLH.Rows[e.RowIndex];
 
             txtMaID.Text = row.Cells["id"].Value.ToString();
             txtMaID.ReadOnly = true;
