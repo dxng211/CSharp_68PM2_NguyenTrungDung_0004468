@@ -68,14 +68,23 @@ namespace QLSinhVien
 
         private void grid_QLSV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = grid_QLSV.CurrentRow;
+            if (e.RowIndex < 0) return;
+            DataGridViewRow row = grid_QLSV.Rows[e.RowIndex];
 
             txt_MSSV.Text = row.Cells["id"].Value.ToString();
             txt_MSSV.ReadOnly = true;
             txt_HoTen.Text = row.Cells["hoten"].Value.ToString();
             cmbGioiTinh.Text = row.Cells["gioitinh"].Value.ToString();
-            date_NgaySinh.Text = row.Cells["ngaysinh"].Value.ToString();
-            cmb_Lop.SelectedValue = row.Cells["malop"].Value.ToString();
+            
+            if (row.Cells["ngaysinh"].Value != DBNull.Value && row.Cells["ngaysinh"].Value != null)
+            {
+                date_NgaySinh.Value = Convert.ToDateTime(row.Cells["ngaysinh"].Value);
+            }
+
+            if (row.Cells["malop"].Value != null)
+            {
+                cmb_Lop.SelectedValue = row.Cells["malop"].Value;
+            }
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)

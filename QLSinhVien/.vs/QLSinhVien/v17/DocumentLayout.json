@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\GitHub\\CSharp_68PM2_NguyenTrungDung_0004468\\QLSinhVien\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BC8630DD-531B-4558-A95C-288180C56130}|QLSinhVien\\QLSinhVien.csproj|E:\\GitHub\\CSharp_68PM2_NguyenTrungDung_0004468\\QLSinhVien\\qlsinhvien\\uc_quanlylophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC8630DD-531B-4558-A95C-288180C56130}|QLSinhVien\\QLSinhVien.csproj|solutionrelative:qlsinhvien\\uc_quanlylophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BC8630DD-531B-4558-A95C-288180C56130}|QLSinhVien\\QLSinhVien.csproj|E:\\GitHub\\CSharp_68PM2_NguyenTrungDung_0004468\\QLSinhVien\\qlsinhvien\\uc_quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC8630DD-531B-4558-A95C-288180C56130}|QLSinhVien\\QLSinhVien.csproj|solutionrelative:qlsinhvien\\uc_quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BC8630DD-531B-4558-A95C-288180C56130}|QLSinhVien\\QLSinhVien.csproj|e:\\github\\csharp_68pm2_nguyentrungdung_0004468\\qlsinhvien\\qlsinhvien\\uc_quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC8630DD-531B-4558-A95C-288180C56130}|QLSinhVien\\QLSinhVien.csproj|solutionrelative:qlsinhvien\\uc_quanlysinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BC8630DD-531B-4558-A95C-288180C56130}|QLSinhVien\\QLSinhVien.csproj|e:\\github\\csharp_68pm2_nguyentrungdung_0004468\\qlsinhvien\\qlsinhvien\\uc_quanlylophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC8630DD-531B-4558-A95C-288180C56130}|QLSinhVien\\QLSinhVien.csproj|solutionrelative:qlsinhvien\\uc_quanlylophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BC8630DD-531B-4558-A95C-288180C56130}|QLSinhVien\\QLSinhVien.csproj|E:\\GitHub\\CSharp_68PM2_NguyenTrungDung_0004468\\QLSinhVien\\qlsinhvien\\uc_quanlylophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -42,30 +42,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UC_QuanLySinhVien.cs",
               "DocumentMoniker": "E:\\GitHub\\CSharp_68PM2_NguyenTrungDung_0004468\\QLSinhVien\\QLSinhVien\\UC_QuanLySinhVien.cs",
               "RelativeDocumentMoniker": "QLSinhVien\\UC_QuanLySinhVien.cs",
               "ToolTip": "E:\\GitHub\\CSharp_68PM2_NguyenTrungDung_0004468\\QLSinhVien\\QLSinhVien\\UC_QuanLySinhVien.cs",
               "RelativeToolTip": "QLSinhVien\\UC_QuanLySinhVien.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAuwIAAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAADAYWZmZqYvwFUAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T03:23:43.35Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UC_QuanLyLopHoc.cs",
               "DocumentMoniker": "E:\\GitHub\\CSharp_68PM2_NguyenTrungDung_0004468\\QLSinhVien\\QLSinhVien\\UC_QuanLyLopHoc.cs",
               "RelativeDocumentMoniker": "QLSinhVien\\UC_QuanLyLopHoc.cs",
               "ToolTip": "E:\\GitHub\\CSharp_68PM2_NguyenTrungDung_0004468\\QLSinhVien\\QLSinhVien\\UC_QuanLyLopHoc.cs",
               "RelativeToolTip": "QLSinhVien\\UC_QuanLyLopHoc.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAhwIEAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAZWZmZuYbwEQAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T08:46:13.952Z",
               "EditorCaption": ""
