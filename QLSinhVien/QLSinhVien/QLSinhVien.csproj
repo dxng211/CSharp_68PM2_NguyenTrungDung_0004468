@@ -52,6 +52,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>database.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DSSinhVien1Lop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSSinhVien1Lop.Designer.cs">
+      <DependentUpon>DSSinhVien1Lop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="UC_QuanLySinhVien.Designer.cs">
       <DependentUpon>UC_QuanLySinhVien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DSSinhVien1Lop.resx">
+      <DependentUpon>DSSinhVien1Lop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

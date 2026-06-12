@@ -216,11 +216,9 @@ namespace QLSinhVien
 
             string maLopDuocChon = txtMaLop.Text;
 
-            var dSSVTheoLop = db.tbl_sinhviens.Where(x => x.malop == maLopDuocChon).ToList();
+            DSSinhVien1Lop formMoi = new DSSinhVien1Lop(maLopDuocChon);
 
-            gridviewQLLH.DataSource = dSSVTheoLop;
-
-            txt_Pagination.Text = $"{maLopDuocChon} | {dSSVTheoLop.Count} sinh viên";
+            formMoi.ShowDialog();
         }
     }
 }
