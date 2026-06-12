@@ -89,6 +89,12 @@ namespace QLSinhVien
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txt_MSSV.Text))
+            {
+                MessageBox.Show("Vui lòng chọn sinh viên cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             tbl_sinhvien sinhvien = db.tbl_sinhviens.SingleOrDefault(x => x.id == txt_MSSV.Text);
 
             sinhvien.hoten = txt_HoTen.Text;
@@ -99,7 +105,7 @@ namespace QLSinhVien
             {
                 db.SubmitChanges();
 
-                MessageBox.Show("Sửa thành công");
+                MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDataPhanTrang();
             }
             catch (Exception ex) {
