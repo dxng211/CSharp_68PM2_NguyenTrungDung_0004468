@@ -115,13 +115,23 @@ namespace QLSinhVien
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txt_MSSV.Text))
+            {
+                MessageBox.Show("Vui lòng chọn sinh viên cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             tbl_sinhvien sinhvien = db.tbl_sinhviens.SingleOrDefault(x => x.id == txt_MSSV.Text);
+
+            DialogResult r = MessageBox.Show($"Bạn chắc chắn muốn XÓA sinh viên {sinhvien.hoten} không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.No) return;
+
             try
             {
                 db.tbl_sinhviens.DeleteOnSubmit(sinhvien);
 
                 db.SubmitChanges();
-                MessageBox.Show("Xóa thành công");
+                MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDataPhanTrang();
 
                 btn_LamMoi_Click(sender, e);
