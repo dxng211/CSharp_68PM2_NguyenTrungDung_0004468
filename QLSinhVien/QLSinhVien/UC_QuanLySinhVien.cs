@@ -159,11 +159,22 @@ namespace QLSinhVien
         {
             string tuKhoa = txt_TimKiem.Text;
 
+            if (string.IsNullOrEmpty(tuKhoa) )
+            {
+                LoadDataPhanTrang();
+                return;
+            }
+
             List<tbl_sinhvien> ketQua = db.tbl_sinhviens.Where(x => x.hoten.Contains(tuKhoa)
                                                                 || x.id == tuKhoa
-                                                                || x.malop == tuKhoa).ToList();
+                                                                || x.malop == tuKhoa).OrderBy(x => x.id).ToList();
 
-            grid_QLSV.DataSource = ketQua;
+            if (ketQua.Count == 0)
+            {
+                MessageBox.Show("Không tim thấy sinh viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                grid_QLSV.DataSource = null;
+            }
+            else grid_QLSV.DataSource = ketQua;
         }
 
         private void btn_backward_Click(object sender, EventArgs e)
@@ -222,7 +233,7 @@ namespace QLSinhVien
 
             grid_QLSV.DataSource = dSSV;
 
-            txt_Pagination.Text = $"Trang {trangHienTai}/{tongSoTrang} | {tongSoBanGhi} bản ghi";
+            txt_Pagination.Text = $"Trang {trangHienTai}/{tongSoTrang} | {soDongTrenTrang} bản ghi";
         }
     }
 
